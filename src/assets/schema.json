@@ -23,30 +23,79 @@
         "light": {
           "type": "object",
           "properties": {
-            "background": { "type": "string", "pattern": "\\d+\\s+\\d+%\\s+\\d+%" },
-            "foreground": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "card": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "card_foreground": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "popover": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "popover_foreground": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "primary": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "primary_foreground": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "secondary": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "secondary_foreground": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "muted": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "muted_foreground": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "accent": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "accent_foreground": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "destructive": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "destructive_foreground": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "border": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "input": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "ring": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "chart_1": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "chart_2": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "chart_3": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "chart_4": { "$ref": "#/properties/theme/properties/light/properties/background" },
-            "chart_5": { "$ref": "#/properties/theme/properties/light/properties/background" }
+            "background": {
+              "type": "string",
+              "pattern": "\\d+\\s+\\d+%\\s+\\d+%"
+            },
+            "foreground": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "card": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "card_foreground": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "popover": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "popover_foreground": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "primary": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "primary_foreground": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "secondary": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "secondary_foreground": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "muted": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "muted_foreground": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "accent": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "accent_foreground": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "destructive": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "destructive_foreground": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "border": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "input": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "ring": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "chart_1": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "chart_2": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "chart_3": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "chart_4": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            },
+            "chart_5": {
+              "$ref": "#/properties/theme/properties/light/properties/background"
+            }
           },
           "required": [
             "background",
@@ -76,7 +125,9 @@
           ],
           "additionalProperties": false
         },
-        "dark": { "$ref": "#/properties/theme/properties/light" }
+        "dark": {
+          "$ref": "#/properties/theme/properties/light"
+        }
       },
       "required": [
         "light",
@@ -143,8 +194,12 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "preserveDataOnReset": { "type": "boolean" },
+          "name": {
+            "type": "string"
+          },
+          "preserveDataOnReset": {
+            "type": "boolean"
+          },
           "fields": {
             "type": "array",
             "items": {
@@ -152,134 +207,370 @@
                 {
                   "type": "object",
                   "properties": {
-                    "title": { "type": "string", "description": "The title of the input" },
-                    "description": { "type": "string", "description": "The description of the input" },
-                    "type": { "type": "string", "const": "counter" },
-                    "required": { "type": "boolean", "description": "Whether this input is required" },
-                    "code": { "type": "string", "description": "A unique code for this input" },
-                    "disabled": { "type": "boolean", "description": "Whether this input is disabled" },
-                    "preserveDataOnReset": { "type": "boolean", "description": "Whether this input should be preserved when the scouting form is reset" },
-                    "defaultValue": { "type": "number", "default": 0, "description": "The default value" },
-                    "min": { "type": "number", "description": "The minimum value" },
-                    "max": { "type": "number", "description": "The maximum value" },
-                    "step": { "type": "number", "description": "The step value", "default": 1 },
-                    "autoIncrementOnReset": { "type": "boolean", "description": "Whether this input should auto-increment on reset, instead of resetting to the default value" }
+                    "title": {
+                      "type": "string",
+                      "description": "The title of the input"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "The description of the input"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "counter"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": "Whether this input is required"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "A unique code for this input"
+                    },
+                    "disabled": {
+                      "type": "boolean",
+                      "description": "Whether this input is disabled"
+                    },
+                    "preserveDataOnReset": {
+                      "type": "boolean",
+                      "description": "Whether this input should be preserved when the scouting form is reset"
+                    },
+                    "defaultValue": {
+                      "type": "number",
+                      "default": 0,
+                      "description": "The default value"
+                    },
+                    "min": {
+                      "type": "number",
+                      "description": "The minimum value"
+                    },
+                    "max": {
+                      "type": "number",
+                      "description": "The maximum value"
+                    },
+                    "step": {
+                      "type": "number",
+                      "description": "The step value",
+                      "default": 1
+                    },
+                    "autoIncrementOnReset": {
+                      "type": "boolean",
+                      "description": "Whether this input should auto-increment on reset, instead of resetting to the default value"
+                    }
                   },
-                  "required": ["title", "type", "required", "code"],
+                  "required": [
+                    "title",
+                    "type",
+                    "required",
+                    "code"
+                  ],
                   "additionalProperties": false
                 },
                 {
                   "type": "object",
                   "properties": {
-                    "title": { "type": "string" },
-                    "description": { "type": "string" },
-                    "type": { "type": "string", "const": "text" },
-                    "required": { "type": "boolean" },
-                    "code": { "type": "string" },
-                    "disabled": { "type": "boolean" },
-                    "preserveDataOnReset": { "type": "boolean" },
-                    "defaultValue": { "type": "string", "default": "", "description": "The default value" },
-                    "min": { "type": "number", "description": "The minimum length of the string" },
-                    "max": { "type": "number", "description": "The maximum length of the string" }
+                    "title": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/title"
+                    },
+                    "description": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/description"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "text"
+                    },
+                    "required": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/required"
+                    },
+                    "code": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/code"
+                    },
+                    "disabled": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/disabled"
+                    },
+                    "preserveDataOnReset": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/preserveDataOnReset"
+                    },
+                    "defaultValue": {
+                      "type": "string",
+                      "default": "",
+                      "description": "The default value"
+                    },
+                    "min": {
+                      "type": "number",
+                      "description": "The minimum length of the string"
+                    },
+                    "max": {
+                      "type": "number",
+                      "description": "The maximum length of the string"
+                    }
                   },
-                  "required": ["title", "type", "required", "code"],
+                  "required": [
+                    "title",
+                    "type",
+                    "required",
+                    "code"
+                  ],
                   "additionalProperties": false
                 },
                 {
                   "type": "object",
                   "properties": {
-                    "title": { "type": "string" },
-                    "description": { "type": "string" },
-                    "type": { "type": "string", "const": "number" },
-                    "required": { "type": "boolean" },
-                    "code": { "type": "string" },
-                    "disabled": { "type": "boolean" },
-                    "preserveDataOnReset": { "type": "boolean" },
-                    "defaultValue": { "type": "number", "default": 0, "description": "The default value" },
-                    "min": { "type": "number", "description": "The minimum value" },
-                    "max": { "type": "number", "description": "The maximum value" },
-                    "autoIncrementOnReset": { "type": "boolean", "description": "Whether this input should auto-increment on reset, instead of resetting to the default value" }
+                    "title": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/title"
+                    },
+                    "description": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/description"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "number"
+                    },
+                    "required": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/required"
+                    },
+                    "code": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/code"
+                    },
+                    "disabled": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/disabled"
+                    },
+                    "preserveDataOnReset": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/preserveDataOnReset"
+                    },
+                    "defaultValue": {
+                      "type": "number",
+                      "default": 0,
+                      "description": "The default value"
+                    },
+                    "min": {
+                      "type": "number",
+                      "description": "The minimum value"
+                    },
+                    "max": {
+                      "type": "number",
+                      "description": "The maximum value"
+                    },
+                    "autoIncrementOnReset": {
+                      "type": "boolean",
+                      "description": "Whether this input should auto-increment on reset, instead of resetting to the default value"
+                    }
                   },
-                  "required": ["title", "type", "required", "code"],
+                  "required": [
+                    "title",
+                    "type",
+                    "required",
+                    "code"
+                  ],
                   "additionalProperties": false
                 },
                 {
                   "type": "object",
                   "properties": {
-                    "title": { "type": "string" },
-                    "description": { "type": "string" },
-                    "type": { "type": "string", "const": "select" },
-                    "required": { "type": "boolean" },
-                    "code": { "type": "string" },
-                    "disabled": { "type": "boolean" },
-                    "preserveDataOnReset": { "type": "boolean" },
-                    "defaultValue": { "type": "string", "default": "", "description": "The default value. Must be one of the choices" },
-                    "choices": { "type": "object", "additionalProperties": { "type": "string" }, "description": "The choices" },
-                    "multiSelect": { "type": "boolean", "description": "Whether multiple choices can be selected" }
+                    "title": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/title"
+                    },
+                    "description": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/description"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "select"
+                    },
+                    "required": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/required"
+                    },
+                    "code": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/code"
+                    },
+                    "disabled": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/disabled"
+                    },
+                    "preserveDataOnReset": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/preserveDataOnReset"
+                    },
+                    "defaultValue": {
+                      "type": "string",
+                      "default": "",
+                      "description": "The default value. Must be one of the choices"
+                    },
+                    "choices": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "The choices"
+                    },
+                    "multiSelect": {
+                      "type": "boolean",
+                      "description": "Whether multiple choices can be selected"
+                    }
                   },
-                  "required": ["title", "type", "required", "code"],
+                  "required": [
+                    "title",
+                    "type",
+                    "required",
+                    "code"
+                  ],
                   "additionalProperties": false
                 },
                 {
                   "type": "object",
                   "properties": {
-                    "title": { "type": "string" },
-                    "description": { "type": "string" },
-                    "type": { "type": "string", "const": "range" },
-                    "required": { "type": "boolean" },
-                    "code": { "type": "string" },
-                    "disabled": { "type": "boolean" },
-                    "preserveDataOnReset": { "type": "boolean" },
-                    "defaultValue": { "type": "number", "default": 0, "description": "The default value" },
-                    "min": { "type": "number", "description": "The minimum value" },
-                    "max": { "type": "number", "description": "The maximum value" },
-                    "step": { "type": "number", "description": "The step value", "default": 1 },
-                    "autoIncrementOnReset": { "type": "boolean", "description": "Whether this input should auto-increment on reset, instead of resetting to the default value" }
+                    "title": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/title"
+                    },
+                    "description": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/description"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "range"
+                    },
+                    "required": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/required"
+                    },
+                    "code": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/code"
+                    },
+                    "disabled": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/disabled"
+                    },
+                    "preserveDataOnReset": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/preserveDataOnReset"
+                    },
+                    "defaultValue": {
+                      "type": "number",
+                      "default": 0,
+                      "description": "The default value"
+                    },
+                    "min": {
+                      "type": "number",
+                      "description": "The minimum value"
+                    },
+                    "max": {
+                      "type": "number",
+                      "description": "The maximum value"
+                    },
+                    "step": {
+                      "type": "number",
+                      "description": "The step value",
+                      "default": 1
+                    },
+                    "autoIncrementOnReset": {
+                      "type": "boolean",
+                      "description": "Whether this input should auto-increment on reset, instead of resetting to the default value"
+                    }
                   },
-                  "required": ["title", "type", "required", "code"],
+                  "required": [
+                    "title",
+                    "type",
+                    "required",
+                    "code"
+                  ],
                   "additionalProperties": false
                 },
                 {
                   "type": "object",
                   "properties": {
-                    "title": { "type": "string" },
-                    "description": { "type": "string" },
-                    "type": { "type": "string", "const": "boolean" },
-                    "required": { "type": "boolean" },
-                    "code": { "type": "string" },
-                    "disabled": { "type": "boolean" },
-                    "preserveDataOnReset": { "type": "boolean" },
-                    "defaultValue": { "type": "boolean", "default": false, "description": "The default value" }
+                    "title": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/title"
+                    },
+                    "description": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/description"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "boolean"
+                    },
+                    "required": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/required"
+                    },
+                    "code": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/code"
+                    },
+                    "disabled": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/disabled"
+                    },
+                    "preserveDataOnReset": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/preserveDataOnReset"
+                    },
+                    "defaultValue": {
+                      "type": "boolean",
+                      "default": false,
+                      "description": "The default value"
+                    }
                   },
-                  "required": ["title", "type", "required", "code"],
+                  "required": [
+                    "title",
+                    "type",
+                    "required",
+                    "code"
+                  ],
                   "additionalProperties": false
                 },
                 {
                   "type": "object",
                   "properties": {
-                    "title": { "type": "string" },
-                    "description": { "type": "string" },
-                    "type": { "type": "string", "const": "timer" },
-                    "required": { "type": "boolean" },
-                    "code": { "type": "string" },
-                    "disabled": { "type": "boolean" },
-                    "preserveDataOnReset": { "type": "boolean" },
-                    "defaultValue": { "type": "number", "default": 0, "description": "The default value" }
+                    "title": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/title"
+                    },
+                    "description": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/description"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "timer"
+                    },
+                    "required": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/required"
+                    },
+                    "code": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/code"
+                    },
+                    "disabled": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/disabled"
+                    },
+                    "preserveDataOnReset": {
+                      "$ref": "#/properties/sections/items/properties/fields/items/anyOf/0/properties/preserveDataOnReset"
+                    },
+                    "defaultValue": {
+                      "type": "number",
+                      "default": 0,
+                      "description": "The default value"
+                    }
                   },
-                  "required": ["title", "type", "required", "code"],
+                  "required": [
+                    "title",
+                    "type",
+                    "required",
+                    "code"
+                  ],
                   "additionalProperties": false
                 }
               ]
             }
           }
         },
-        "required": ["name", "fields"],
+        "required": [
+          "name",
+          "fields"
+        ],
         "additionalProperties": false
       }
     },
-    "$schema": { "type": "string" }
+    "$schema": {
+      "type": "string"
+    }
   },
-  "required": ["title", "page_title", "delimiter", "teamNumber", "theme", "sections"],
+  "required": [
+    "title",
+    "page_title",
+    "delimiter",
+    "teamNumber",
+    "theme",
+    "sections"
+  ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }
